@@ -1,7 +1,7 @@
 :root {
   /* Base colors */
   --bg: #f7f4ef;
-  --surface: #ffffff;
+  --surface: #fff;
   --text: #0b1724;
   --muted: #6b7280;
   --border: #e5e7eb;
@@ -12,7 +12,7 @@
   --accent: #f59e0b;
 
   /* Brand colors extracted from assets/6.png (approximated) */
-  --brand-white: #ffffff;
+  --brand-white: #fff;
   --brand-navy: #07132a; /* dark navy used in logo background */
   --brand-deep-blue: #0b57ff; /* vibrant blue from logo */
   --brand-cyan: #12c7d9; /* turquoise accent in logo */
@@ -26,7 +26,7 @@
 
 body {
   margin: 0;
-  font-family: Inter, "Segoe UI", Roboto, sans-serif;
+  font-family: Inter, 'Segoe UI', Roboto, sans-serif;
   color: var(--text);
   background: var(--bg);
   line-height: 1.6;
@@ -97,7 +97,7 @@ img {
 
 .lead {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgb(255 255 255 / 90%);
   margin-bottom: 1.25rem;
 }
 
@@ -125,9 +125,9 @@ img {
 }
 
 .hero-card {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgb(255 255 255 / 12%);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgb(255 255 255 / 20%);
   border-radius: 1rem;
   padding: 1.25rem;
 }
@@ -155,7 +155,7 @@ img {
   border: 1px solid var(--border);
   border-radius: 1rem;
   padding: 1.25rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 30px rgb(0 0 0 / 4%);
 }
 
 .footer {
@@ -168,7 +168,7 @@ img {
   text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .hero-content {
     grid-template-columns: 1.2fr 0.8fr;
     align-items: center;
