@@ -1,4 +1,7 @@
 {
   "extends": "stylelint-config-standard",
-  "rules": {}
+  "rules": {
+    "indentation": 2,
+    "number-leading-zero": "always"
+  }
 }
