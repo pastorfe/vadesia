@@ -1,0 +1,10 @@
+{
+  "**/*.{css,html,js,md}": [
+    "prettier --write",
+    "git add"
+  ],
+  "**/*.css": [
+    "stylelint --fix",
+    "git add"
+  ]
+}

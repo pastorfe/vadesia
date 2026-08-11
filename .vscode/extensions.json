@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "ritwickdey.LiveServer",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "streetsidesoftware.code-spell-checker",
+    "eamodio.gitlens",
+    "christian-kohler.path-intellisense",
+    "zignd.html-css-class-completion",
+    "naumovs.color-highlight"
+  ]
+}
