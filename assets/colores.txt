@@ -1,0 +1,5 @@
+Blanco --- #FFFFFF
+Azu Claro --- #00C8FF
+Azul electrico --- #0000C8
+Casi negro --- #0B1320
+

@@ -1,0 +1,14 @@
+node_modules/
+dist/
+build/
+.env
+.DS_Store
+.vscode/
+/.idea/
+package-lock.json
+.cache/
+coverage/
+.husky/_/
+
+**/_OLD/
+.netlify/
