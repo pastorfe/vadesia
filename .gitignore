@@ -9,3 +9,6 @@ package-lock.json
 .cache/
 coverage/
 .husky/_/
+
+**/_OLD/
+.netlify/

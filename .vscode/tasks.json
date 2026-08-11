@@ -4,13 +4,16 @@
     {
       "label": "Run local server",
       "type": "shell",
-      "command": "python3 -m http.server 8000",
+      "command": "npm run start",
       "group": {
         "kind": "build",
         "isDefault": true
       },
       "presentation": {
         "reveal": "always"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
       }
     }
   ]
