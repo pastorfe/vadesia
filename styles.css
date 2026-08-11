@@ -45,7 +45,27 @@ img {
 .hero {
   background: transparent;
   color: var(--text);
-  padding-bottom: 3rem;
+  padding: 2.5rem 0 3.5rem;
+  position: relative;
+  overflow: visible;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  right: -8%;
+  top: 10%;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgb(18 199 217 / 7%),
+    rgb(11 87 255 / 3%) 40%,
+    transparent 60%
+  );
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .nav {
@@ -112,28 +132,82 @@ img {
 
 .hero-content {
   display: grid;
-  gap: 1.5rem;
-  padding-top: 2rem;
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.hero-copy {
+  text-align: center;
+  max-width: 60ch;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero-copy > * {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fade-up 600ms ease forwards;
+}
+
+.hero-copy > *:nth-child(1) {
+  animation-delay: 80ms;
+}
+
+.hero-copy > *:nth-child(2) {
+  animation-delay: 200ms;
+}
+
+.hero-copy > *:nth-child(3) {
+  animation-delay: 320ms;
+}
+
+.hero-copy > *:nth-child(4) {
+  animation-delay: 440ms;
+}
+
+@keyframes fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .eyebrow {
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  opacity: 0.9;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.08em;
+  text-transform: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--brand-cyan);
+  opacity: 0.95;
+  margin-top: 0.1rem;
+  margin-bottom: 0.6rem;
+  display: inline-block;
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.1;
+  font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+  line-height: 1.05;
   margin: 0 0 1rem;
+  font-weight: 700;
+}
+
+.accent {
+  background: linear-gradient(90deg, var(--brand-deep-blue), var(--brand-cyan));
+  background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .lead {
-  font-size: 1rem;
-  color: rgb(255 255 255 / 90%);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text);
   margin-bottom: 1.25rem;
+  max-width: 56ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn {
@@ -160,11 +234,11 @@ img {
 }
 
 .hero-card {
-  background: rgb(255 255 255 / 12%);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgb(255 255 255 / 20%);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 1rem;
-  padding: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgb(2 6 23 / 6%);
 }
 
 .hero-card ul {
