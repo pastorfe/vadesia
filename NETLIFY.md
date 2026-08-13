@@ -29,5 +29,6 @@ npx serve .
 ```
 
 Notes:
+
 - The `netlify.toml` file in the repo sets the publish directory to the project root.
 - I cannot complete the GitHub <-> Netlify authorization from here without you signing in; once you authorize Netlify I can finish any remote configuration if you want.
