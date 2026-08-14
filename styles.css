@@ -30,6 +30,7 @@ body {
   color: var(--text);
   background: var(--bg);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 img {
@@ -81,9 +82,9 @@ img {
 }
 
 .nav-logo {
-  width: 100%;
-  max-width: 100%;
-  padding: 0 50px;
+  width: auto;
+  max-width: 400px;
+  padding: 0 20px;
 }
 
 .nav-logo img {
