@@ -82,9 +82,9 @@ img {
 }
 
 .nav-logo {
-  width: auto;
-  max-width: 400px;
-  padding: 0 20px;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 10px;
 }
 
 .nav-logo img {
