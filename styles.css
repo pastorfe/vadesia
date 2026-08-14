@@ -147,7 +147,7 @@ img {
 
 .services-section-wrapper {
   max-width: 60ch;
-  margin: 2rem auto 0;
+  margin: 0.5rem auto 0;
   padding: 0 1rem;
 }
 
@@ -323,7 +323,6 @@ img {
   font-size: 3rem;
   margin-bottom: 1.25rem;
   background: linear-gradient(135deg, var(--brand-deep-blue), var(--brand-cyan));
-  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   display: inline-block;
