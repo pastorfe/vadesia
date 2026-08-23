@@ -3,16 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vadesia | Branding y diseño para emprendedores</title>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self';"
+    />
+    <title>Vadesia | Soluciones tecnológicas empresariales</title>
     <meta
       name="description"
-      content="Vadesia crea identidades visuales y experiencias digitales que ayudan a captar clientes y destacar en el mercado."
+      content="Vadesia desarrolla software estratégico y soluciones digitales que impulsan el crecimiento empresarial y optimizan operaciones"
     />
     <meta name="theme-color" content="#07132a" />
-    <meta property="og:title" content="Vadesia | Branding y diseño para emprendedores" />
+    <meta name="last-updated" content="2026-08-23" />
+    <meta property="og:title" content="Vadesia | Soluciones tecnológicas empresariales" />
     <meta
       property="og:description"
-      content="Vadesia crea identidades visuales y experiencias digitales que ayudan a captar clientes y destacar en el mercado."
+      content="Vadesia desarrolla software estratégico y soluciones digitales que impulsan el crecimiento empresarial y optimizan operaciones"
     />
     <meta property="og:image" content="assets/logo.svg" />
     <meta property="og:type" content="website" />
@@ -29,67 +34,69 @@
       </nav>
 
       <div class="container hero-content">
-        <div class="hero-copy">
-          <p class="eyebrow">Desarrollamos la tecnología que tu empresa necesita</p>
-          <h1><span class="accent">Software</span> que se adapta a tu negocio.</h1>
-          <p class="lead">
-            Creamos software y soluciones digitales a medida para automatizar, optimizar y crecer.
-          </p>
+        <img
+          src="assets/eyebrow-text.svg"
+          alt="Su éxito digital comienza aquí"
+          class="eyebrow-img"
+        />
+        <div class="eyebrow-separator"></div>
+        <div class="hero-text-card">
+          <h1>
+            Creamos
+            <span style="color: var(--brand-deep-blue)">soluciones</span><br />
+            que impulsan el
+            <span style="color: var(--brand-deep-blue)">crecimiento</span><br />
+            y transformamos su<br />
+            <span style="color: var(--brand-deep-blue)">visión digital</span> en realidad
+          </h1>
         </div>
-
-        <div class="hero-card" aria-label="Resumen de servicios">
-          <h2>Líneas de servicio</h2>
-          <ul>
-            <li>
-              <strong>DESARROLLO DE SOFTWARE</strong><br />Aplicaciones y herramientas a medida
-              diseñadas para resolver las necesidades concretas de tu empresa.
-            </li>
-            <li>
-              <strong>APLICACIONES WEB</strong><br />Soluciones accesibles desde cualquier
-              dispositivo, sin instalaciones y preparadas para crecer contigo.
-            </li>
-            <li>
-              <strong>WEBS CORPORATIVAS</strong><br />Diseñamos webs profesionales que convierten tu
-              presencia digital en una herramienta para tu negocio.
-            </li>
-            <li>
-              <strong>AUTOMATIZACIÓN DE PROCESOS</strong><br />Automatizamos tareas repetitivas para
-              ahorrar tiempo, reducir errores y mejorar la productividad.
-            </li>
-            <li>
-              <strong>INTEGRACIÓN DE SISTEMAS</strong><br />Conectamos tus herramientas y
-              aplicaciones para que la información fluya de forma automática.
-            </li>
-            <li>
-              <strong>SOLUCIONES EMPRESARIALES</strong><br />Desarrollamos herramientas específicas
-              para mejorar la gestión y el funcionamiento de tu empresa.
-            </li>
-          </ul>
-        </div>
+        <div class="eyebrow-separator"></div>
       </div>
     </header>
 
-    <main>
-      <section class="section container">
-        <h2>La tecnología debe adaptarse a tu empresa, no tu empresa a la tecnología.</h2>
-        <p class="lead">
-          Desarrollamos soluciones digitales a medida para simplificar procesos, automatizar tareas
-          y transformar ideas en software.
-        </p>
-      </section>
-
-      <section class="section container" id="contacto">
-        <h2>Hablemos de tu proyecto</h2>
-        <p>Cuéntame qué necesitas y te preparo una propuesta con enfoque comercial y visual.</p>
-        <a class="btn btn-secondary" href="mailto:hola@vadesia.com">hola@vadesia.com</a>
-      </section>
-    </main>
+    <div class="container services-section-wrapper" aria-label="Resumen de servicios">
+      <div class="services-section">
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">💻</div>
+            <h3>DESARROLLO DE SOFTWARE</h3>
+            <p>
+              Obtenga soluciones a medida que se integren en el día a día y funcionen exactamente
+              como necesita.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🌐</div>
+            <h3>WEBS</h3>
+            <p>
+              Convierta visitantes en clientes y fortalezca su presencia digital, ya sean webs
+              corporativas, tiendas online o plataformas personalizadas.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">⚡</div>
+            <h3>AUTOMATIZACIÓN DE PROCESOS</h3>
+            <p>
+              Evite que las tareas repetitivas consuman tiempo y dinero; centrese en lo importante:
+              hacer crecer el negocio.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔗</div>
+            <h3>INTEGRACIÓN DE SISTEMAS</h3>
+            <p>
+              Haga que la información fluya sin problemas entre sus herramientas y así pueda tomar
+              decisiones cuando más las necesite.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer class="footer">
       <div class="container footer-content">
         <p>© 2026 Vadesia. Todos los derechos reservados.</p>
       </div>
     </footer>
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   </body>
 </html>
