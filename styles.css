@@ -464,7 +464,7 @@ img {
 
 .floating-contact-menu {
   position: absolute;
-  right: 9px;
+  right: 7px;
   bottom: calc(100% + 0.75rem);
   display: flex;
   flex-direction: column;
