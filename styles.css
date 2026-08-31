@@ -776,3 +776,30 @@ img {
     height: 2.0625rem;
   }
 }
+
+/* Móvil horizontal (ancho 768-1023 con orientación landscape): iguala
+   las columnas del grid de servicios evitando el inflado de
+   min-content que desigualaba las tarjetas. Tablet vertical (portrait)
+   y escritorio (>=1024) quedan intactos; las tablets reales en
+   horizontal son >=1024px. */
+@media (width >= 768px) and (width < 1024px) and (orientation: landscape) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Aprovecha todo el ancho del contenedor: anula el tope de 60ch
+     (≈534px) solo en móvil horizontal; las 2 columnas reparten
+     equitativamente el ancho completo. */
+  .services-section-wrapper {
+    max-width: none;
+  }
+
+  .service-card h3 {
+    /* Necesario: con columnas iguales, AUTOMATIZACIÓN no cabe entera.
+       hyphens auto silabea en móviles reales (diccionario es); el
+       overflow-wrap cubre navegadores sin diccionario (corte limpio,
+       sin desbordar la tarjeta). */
+    hyphens: auto;
+    overflow-wrap: anywhere;
+  }
+}
