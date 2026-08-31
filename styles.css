@@ -18,6 +18,12 @@
   --brand-cyan: #12c7d9; /* turquoise accent in logo */
   --brand-gradient-start: var(--brand-navy);
   --brand-gradient-end: var(--brand-deep-blue);
+
+  /* Vadesia official colors */
+  --vadesia-white: #fff;
+  --vadesia-light-blue: #00c8ff;
+  --vadesia-electric-blue: #0000c8;
+  --vadesia-dark: #0b1320;
 }
 
 * {
@@ -89,6 +95,16 @@ img {
   max-width: 100%;
   text-align: center;
   margin-top: 10px;
+}
+
+.nav-logo a {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.nav-logo a:hover {
+  transform: scale(1.02);
 }
 
 .nav-logo img {
@@ -328,15 +344,209 @@ img {
 }
 
 .footer {
-  background: #111827;
-  color: #d1d5db;
-  padding: 1.25rem 0;
+  background: linear-gradient(135deg, var(--brand-navy), var(--brand-deep-blue));
+  color: #fff;
+  padding: 3rem 0;
+  margin-top: 4rem;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--brand-deep-blue), var(--brand-cyan));
 }
 
 .footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-section {
   text-align: center;
 }
-<<<<<<< Updated upstream ======= @media (width >= 768px) {
+
+.footer-copyright {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  opacity: 0.95;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.footer-link:hover {
+  opacity: 1;
+}
+
+.footer-link-separator {
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
+
+/* Floating Contact Button */
+.floating-contact {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+}
+
+.floating-contact-button {
+  position: relative;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--vadesia-electric-blue), var(--vadesia-light-blue));
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgb(0 0 192 / 15%);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.floating-contact-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgb(0 0 192 / 25%);
+}
+
+.floating-contact-button:focus {
+  outline: 2px solid var(--vadesia-light-blue);
+  outline-offset: 2px;
+}
+
+.floating-contact-button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--vadesia-white);
+  display: block;
+}
+
+.floating-contact-menu {
+  position: absolute;
+  bottom: calc(100% + 0.75rem);
+  right: 0;
+  background: var(--vadesia-white);
+  border: 1px solid var(--vadesia-light-blue);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 10%);
+  padding: 0.5rem;
+  width: 14rem;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.floating-contact-menu.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.floating-contact-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--vadesia-dark);
+  transition: background 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+  height: 2.75rem;
+}
+
+.floating-contact-menu-item:hover {
+  background: rgb(0 200 255 / 5%);
+}
+
+.floating-contact-menu-item:focus {
+  outline: 2px solid var(--vadesia-light-blue);
+  outline-offset: -2px;
+}
+
+.floating-contact-menu-item svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: var(--vadesia-electric-blue);
+  display: block;
+  flex-shrink: 0;
+}
+
+.floating-contact-menu-item:hover svg {
+  fill: var(--vadesia-light-blue);
+}
+
+.floating-contact-menu-item-text {
+  white-space: nowrap;
+}
+
+@media (width <= 768px) {
+  .floating-contact {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .floating-contact-button {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .floating-contact-button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .floating-contact-menu {
+    width: 12rem;
+    bottom: calc(100% + 0.5rem);
+  }
+
+  .floating-contact-menu-item {
+    padding: 0.625rem 0.875rem;
+    height: 2.5rem;
+    font-size: 0.8125rem;
+  }
+
+  .floating-contact-menu-item svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+}
+
+@media (width >= 768px) {
   .container {
     width: min(1400px, calc(100% - 4rem));
   }
@@ -368,6 +578,21 @@ img {
 
   .service-card p {
     font-size: 1.25rem;
+  }
+
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .footer-section {
+    text-align: left;
+  }
+
+  .footer-section:nth-child(2) {
+    text-align: right;
   }
 }
 
