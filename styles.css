@@ -314,7 +314,7 @@ img {
   filter: drop-shadow(0 2px 4px rgb(11 87 255 / 20%));
 }
 
-.service-card h3 {
+.service-card h2 {
   font-size: 1.75rem;
   font-weight: 900;
   color: var(--text);
@@ -397,6 +397,10 @@ img {
   font-weight: 500;
   opacity: 0.85;
   transition: opacity 0.2s ease;
+
+  /* U5: objetivo táctil >= 24px (23px de texto + 2px vertical);
+     el padding horizontal (6px) apenas altera el grupo centrado. */
+  padding: 0.125rem 0.375rem;
 }
 
 .footer-link:hover {
@@ -425,6 +429,15 @@ img {
   transform: none;
   opacity: 0;
   pointer-events: none;
+
+  /* A2: fuera del orden de tabulación cuando está oculto; la
+     visibilidad se retrasa 0.25s para no alterar el desvanecimiento
+     (al reaparecer vuelve a visible de inmediato, sin retardo). */
+  visibility: hidden;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    visibility 0s linear 0.25s;
 }
 
 .floating-contact-button {
@@ -591,7 +604,12 @@ img {
   }
 
   .services-grid {
-    grid-template-columns: repeat(2, 1fr);
+    /* Tablet vertical: dos columnas EXACTAMENTE iguales que reparten
+       todo el ancho de la cuadrícula. minmax(0,1fr) evita que el
+       min-content de AUTOMATIZACIÓN infle una columna (efecto nulo en
+       escritorio >=1024, que lo sobrescribe, y en móvil horizontal,
+       que tiene su propia regla). */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 3rem;
   }
 
@@ -603,7 +621,7 @@ img {
     font-size: 4rem;
   }
 
-  .service-card h3 {
+  .service-card h2 {
     font-size: 2rem;
   }
 
@@ -698,7 +716,7 @@ img {
     font-size: 4.5rem;
   }
 
-  .service-card h3 {
+  .service-card h2 {
     font-size: 2.25rem;
   }
 
@@ -794,12 +812,45 @@ img {
     max-width: none;
   }
 
-  .service-card h3 {
+  .service-card h2 {
     /* Necesario: con columnas iguales, AUTOMATIZACIÓN no cabe entera.
        hyphens auto silabea en móviles reales (diccionario es); el
        overflow-wrap cubre navegadores sin diccionario (corte limpio,
        sin desbordar la tarjeta). */
     hyphens: auto;
     overflow-wrap: anywhere;
+  }
+}
+
+/* Tablet vertical (768-1023 en portrait): con columnas iguales los
+   títulos largos no caben enteros; silabeo en móviles/tablets con
+   diccionario es y corte limpio en navegadores sin él (mismo criterio
+   que móvil horizontal). */
+@media (width >= 768px) and (width < 1024px) and (orientation: portrait) {
+  /* Sin el tope heredado de 60ch (≈534px): las 2 columnas iguales
+     ocupan todo el ancho del contenedor (704-959px), como en móvil
+     horizontal y escritorio. */
+  .services-section-wrapper {
+    max-width: none;
+  }
+
+  .service-card h2 {
+    hyphens: auto;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* A4: respeta prefers-reduced-motion — anula animaciones y
+   transiciones no esenciales sin cambiar el diseño estático ni las
+   funcionalidades (la ocultación/reaparición del widget sigue
+   produciéndose, simplemente sin el fundido). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

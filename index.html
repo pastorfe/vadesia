@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self';"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'self';"
     />
     <title>Vadesia | Soluciones tecnológicas empresariales</title>
     <meta
@@ -98,44 +98,46 @@
       </div>
     </header>
 
-    <div class="container services-section-wrapper" aria-label="Resumen de servicios">
-      <div class="services-section">
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">💻</div>
-            <h3>DESARROLLO DE SOFTWARE</h3>
-            <p>
-              Obtenga soluciones a medida que se integren en el día a día y funcionen exactamente
-              como necesita.
-            </p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">🌐</div>
-            <h3>WEBS</h3>
-            <p>
-              Convierta visitantes en clientes y fortalezca su presencia digital, ya sean webs
-              corporativas, tiendas online o plataformas personalizadas.
-            </p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">⚡</div>
-            <h3>AUTOMATIZACIÓN DE PROCESOS</h3>
-            <p>
-              Evite que las tareas repetitivas consuman tiempo y dinero; centrese en lo importante:
-              hacer crecer el negocio.
-            </p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">🔗</div>
-            <h3>INTEGRACIÓN DE SISTEMAS</h3>
-            <p>
-              Haga que la información fluya sin problemas entre sus herramientas y así pueda tomar
-              decisiones cuando más las necesite.
-            </p>
+    <main>
+      <section class="container services-section-wrapper" aria-label="Resumen de servicios">
+        <div class="services-section">
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon" aria-hidden="true">💻</div>
+              <h2>DESARROLLO DE SOFTWARE</h2>
+              <p>
+                Obtenga soluciones a medida que se integren en el día a día y funcionen exactamente
+                como necesita.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon" aria-hidden="true">🌐</div>
+              <h2>WEBS</h2>
+              <p>
+                Convierta visitantes en clientes y fortalezca su presencia digital, ya sean webs
+                corporativas, tiendas online o plataformas personalizadas.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon" aria-hidden="true">⚡</div>
+              <h2>AUTOMATIZACIÓN DE PROCESOS</h2>
+              <p>
+                Evite que las tareas repetitivas consuman tiempo y dinero; centrese en lo
+                importante: hacer crecer el negocio.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon" aria-hidden="true">🔗</div>
+              <h2>INTEGRACIÓN DE SISTEMAS</h2>
+              <p>
+                Haga que la información fluya sin problemas entre sus herramientas y así pueda tomar
+                decisiones cuando más las necesite.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
 
     <footer class="footer">
       <div class="container footer-content">
@@ -145,7 +147,7 @@
         <div class="footer-section">
           <nav class="footer-links" aria-label="Enlaces legales">
             <a href="aviso-legal.html" class="footer-link">Aviso legal</a>
-            <span class="footer-link-separator">·</span>
+            <span class="footer-link-separator" aria-hidden="true">·</span>
             <a href="privacidad.html" class="footer-link">Privacidad</a>
           </nav>
         </div>
