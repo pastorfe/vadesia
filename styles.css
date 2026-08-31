@@ -464,14 +464,17 @@ img {
 
 .floating-contact-menu {
   position: absolute;
-  right: 0;
+  right: 9px;
   bottom: calc(100% + 0.75rem);
-  width: 13.5rem;
-  padding: 0.5rem;
-  background: var(--vadesia-white);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: auto;
+  padding: 0;
+  background: transparent;
   border: 0;
-  border-radius: 0.9rem;
-  box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 16%);
+  border-radius: 0;
+  box-shadow: none;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -495,32 +498,51 @@ img {
 .floating-contact-item {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  min-height: 2.75rem;
-  padding: 0.65rem 0.85rem;
-  border-radius: 0.6rem;
-  color: var(--vadesia-dark);
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 600;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  box-shadow: 0 0.2rem 0.5rem rgb(0 0 0 / 25%);
   transition:
-    background 0.15s ease,
-    color 0.15s ease;
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
-.floating-contact-item:hover,
+.floating-contact-item[data-contact='whatsapp'] {
+  background: linear-gradient(140deg, #00c8ff 45%, #0000c8 155%);
+}
+
+.floating-contact-item[data-contact='phone'] {
+  background: #0000c8;
+}
+
+.floating-contact-item[data-contact='email'] {
+  background: linear-gradient(140deg, #0000c8 45%, #00c8ff 155%);
+}
+
+.floating-contact-item:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0.3rem 0.8rem rgb(0 0 0 / 35%);
+}
+
 .floating-contact-item:focus-visible {
-  background: linear-gradient(135deg, rgb(0 0 200 / 6%), rgb(0 200 255 / 10%));
-  color: var(--vadesia-electric-blue);
-  outline: none;
+  outline: 2px solid var(--vadesia-light-blue);
+  outline-offset: 2px;
 }
 
 .floating-contact-icon {
-  width: 1.25rem;
-  flex: 0 0 1.25rem;
-  text-align: center;
-  color: var(--vadesia-electric-blue);
-  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.375rem;
+  height: 1.375rem;
+  color: #fff;
+}
+
+.floating-contact-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 @media (width <= 768px) {
@@ -541,7 +563,17 @@ img {
   }
 
   .floating-contact-menu {
-    width: min(13.5rem, calc(100vw - 2rem));
+    max-width: calc(100vw - 2rem);
+  }
+
+  .floating-contact-item {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .floating-contact-icon {
+    width: 1.25rem;
+    height: 1.25rem;
   }
 }
 
